@@ -7,11 +7,13 @@ export default function Alert(props) {
     return lower.charAt(0).toUpperCase() + lower.slice(1); 
   }
   return (
-   props.alert &&  <div class={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
+  <div style={{height:'50px'}}> 
+  {/* this height will stop shifting of layout */}
+    {props.alert &&  <div class={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
     <strong>{capitalize(props.alert.type)}</strong>:{props.alert.msg}
     {/* <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> */}
-     {/* upper button to dismiss alerts */}
-     
-  </div>
+    {/* upper button to dismiss alerts */}</div>}
+  </div>  
+  
   )
 }
